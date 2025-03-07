@@ -29,7 +29,6 @@ function sumTransactions(transactions) {
   transactions.forEach((transaction) => {
     total += transaction.amount;
   });
-
   return total;
 
   // const result = transactions.reduce(
