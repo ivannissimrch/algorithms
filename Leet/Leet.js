@@ -56,22 +56,22 @@ let leetChars = [
 ];
 
 function leetTranslator(message) {
-  // const arrayFromMessage = message.split("");
+  const arrayFromMessage = message.split("");
 
-  // const result = arrayFromMessage.map((char) => {
-  //   const index = letters.indexOf(char);
-  //   return leetChars[index];
-  // });
-
-  // return result.join("");
-
-  const mapCharts = {};
-
-  letters.forEach((char, idx) => {
-    mapCharts[char] = leetChars[idx];
+  const result = arrayFromMessage.map((char) => {
+    const index = letters.indexOf(char);
+    return leetChars[index];
   });
 
-  console.log(mapCharts);
+  return result.join("");
+
+  // const mapCharts = {};
+
+  // letters.forEach((char, idx) => {
+  //   mapCharts[char] = leetChars[idx];
+  // });
+
+  // console.log(mapCharts);
 }
 
 console.log(leetTranslator("fullstack"));
