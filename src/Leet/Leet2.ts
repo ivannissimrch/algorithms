@@ -55,7 +55,7 @@ let leetChars2 = [
   "2",
 ];
 
-function leetTranslator2(message: string) {
+export function leetTranslator2(message: string) {
   let translatedMessage = message
     .toLowerCase()
     .split("")

@@ -33,7 +33,7 @@ let transactions = [
 // }
 
 //solution2 for of loop
-function lastFridayNight(transactions: Transactions[]) {
+export function lastFridayNight(transactions: Transactions[]) {
   let totalAmount = 0;
 
   for (const transaction of transactions) {
