@@ -1,4 +1,4 @@
-function compareObjects2(
+export function compareObjects2(
   object1: Record<string, any>,
   object2: Record<string, any>
 ) {
