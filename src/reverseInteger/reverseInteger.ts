@@ -4,11 +4,16 @@ export function reverseInteger(integer: number) {
     return reversedNumber;
   }
 
-  //todo
-
-  // if (integer < 0) {
-  //   return 1;
-  // }
+  if (integer < 0) {
+    const positiveInteger = integer * -1;
+    const reversedInteger = +positiveInteger
+      .toString()
+      .split("")
+      .reverse()
+      .join("");
+    const result = reversedInteger * -1;
+    return result;
+  }
 
   if (integer > 0) {
     return +integer.toString().split("").reverse().join("");
@@ -21,4 +26,4 @@ export function reverseInteger(integer: number) {
 // reverseInt(-15) === -51
 // reverseInt(-90) === -9
 
-console.log(reverseInteger(51));
+console.log(reverseInteger(-5));
