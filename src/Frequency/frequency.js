@@ -1,11 +1,9 @@
 function frequencyAnalysis(lettersSequence) {
   const letterCount = {};
-
   // console.log(letterCount[char]);
   for (const char of lettersSequence) {
     !letterCount[char] ? (letterCount[char] = 1) : letterCount[char]++;
   }
-
   return letterCount;
 }
 
