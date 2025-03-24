@@ -40,21 +40,44 @@ let classRoom = [
   },
 ];
 
-function attendanceCheck(day) {
-  const studentsAttending = [];
+// function attendanceCheck(dayEntered) {
+//   //get keys on Object
+//   const indexOfDayEntered = ["Monday", "Tuesday", "Wednesday"].indexOf(
+//     dayEntered
+//   );
 
-  classRoom.forEach((student, idx) => {
-    const objectKeys = Object.keys(student);
+//   const nestedkeys = classRoom.map((std) => Object.keys(std));
+//   const studentNames = nestedkeys.flat();
 
-    const eachStudentAttendance = student[objectKeys[0]];
-    console.log(eachStudentAttendance);
+//   //acces Students dayta wich is an arary of objects
+//   const studentOjects = classRoom.map((student, idx) => {
+//     return student[studentNames[idx]];
+//   });
 
-    eachStudentAttendance.forEach((t) => console.log(t));
-    //const values = Object.values(student);
+//   const matches = [];
+//   const studentsAttending = studentOjects.filter((day, idx) => {
+//     // need the index of en
+//     if (day[indexOfDayEntered][dayEntered] === true) {
+//       matches.push(studentNames[idx]);
+//     }
+//   });
 
-    // student[values[idx]];
-  });
-  return studentsAttending;
+//   return matches;
+// }
+
+function attendanceCheck(dayEntered) {
+  const attendingStudents = [];
+
+  for (const studentObj of classRoom) {
+    const studentName = Object.keys(studentObj)[0]; // Get the student's name
+    const attendance = studentObj[studentName]; // Get the attendance array
+
+    for (const dayAttendance of attendance) {
+      if (dayAttendance[dayEntered] === true) {
+        attendingStudents.push(studentName);
+        break; // Once a student is found attending, no need to check other days.
+      }
+    }
+  }
 }
-
-console.log(attendanceCheck("Monday"));
+console.log(attendanceCheck("Wednesday"));
