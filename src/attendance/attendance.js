@@ -40,44 +40,33 @@ let classRoom = [
   },
 ];
 
-// function attendanceCheck(dayEntered) {
-//   //get keys on Object
-//   const indexOfDayEntered = ["Monday", "Tuesday", "Wednesday"].indexOf(
-//     dayEntered
-//   );
-
-//   const nestedkeys = classRoom.map((std) => Object.keys(std));
-//   const studentNames = nestedkeys.flat();
-
-//   //acces Students dayta wich is an arary of objects
-//   const studentOjects = classRoom.map((student, idx) => {
-//     return student[studentNames[idx]];
-//   });
-
-//   const matches = [];
-//   const studentsAttending = studentOjects.filter((day, idx) => {
-//     // need the index of en
-//     if (day[indexOfDayEntered][dayEntered] === true) {
-//       matches.push(studentNames[idx]);
-//     }
-//   });
-
-//   return matches;
-// }
-
 function attendanceCheck(dayEntered) {
-  const attendingStudents = [];
+  //get keys on Object
+  const indexOfDayEntered = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+  ].indexOf(dayEntered);
 
-  for (const studentObj of classRoom) {
-    const studentName = Object.keys(studentObj)[0]; // Get the student's name
-    const attendance = studentObj[studentName]; // Get the attendance array
+  const nestedkeys = classRoom.map((std) => Object.keys(std));
+  const studentNames = nestedkeys.flat();
 
-    for (const dayAttendance of attendance) {
-      if (dayAttendance[dayEntered] === true) {
-        attendingStudents.push(studentName);
-        break; // Once a student is found attending, no need to check other days.
-      }
+  //acces Students dayta wich is an arary of objects
+  const studentOjects = classRoom.map((student, idx) => {
+    return student[studentNames[idx]];
+  });
+
+  const matches = [];
+  const studentsAttending = studentOjects.filter((day, idx) => {
+    // need the index of en
+    if (day[indexOfDayEntered][dayEntered] === true) {
+      matches.push(studentNames[idx]);
     }
-  }
+  });
+
+  return matches;
 }
-console.log(attendanceCheck("Wednesday"));
+
+console.log(attendanceCheck("Monday"));
