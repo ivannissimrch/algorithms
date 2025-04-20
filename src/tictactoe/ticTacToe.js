@@ -11,11 +11,15 @@ const ticTacToe = {
     console.log("move not allowed");
   },
   clear: function () {
-    return (this.board = [
-      [null, null, null],
-      [null, null, null],
-      [null, null, null],
-    ]);
+    // return (this.board = [
+    //   [null, null, null],
+    //   [null, null, null],
+    //   [null, null, null],
+    // ]);
+
+    this.board.forEach((row) =>
+      row.forEach((col, idx) => (this.board[idx][idx] = null))
+    );
   },
 };
 

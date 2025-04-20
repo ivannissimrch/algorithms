@@ -20,22 +20,43 @@ let tacoCatInc = {
   },
 
   cash: 0,
+
+  currentInventory: function () {
+    let totalValue = 0;
+    for (const key in this) {
+      if (key !== "cash") {
+        for (const taco in this[key]) {
+          totalValue =
+            totalValue + this[key][taco].cost * this[key][taco].quantity;
+        }
+      }
+    }
+    return totalValue;
+  },
+
+  sale: function (order) {
+    let totalOrder = 0;
+
+    const tacosInOrder = Object.keys(order);
+    tacosInOrder.forEach((eachTacoInOrder) => {
+      let category = eachTacoInOrder;
+      let taco = order[category];
+      console.log(taco);
+      console.log(tacoCatInc[category][taco]["cost"]);
+    });
+
+    return totalOrder;
+  },
 };
 
-tacoCatInc.currentInventory = function () {
-  for (const key in this) {
-    console.log(key);
-  }
+console.log(tacoCatInc.currentInventory()); // => 1710
+
+let order = {
+  gourmetShell: "hard treat shell",
+  gourmetFishFilling: "salmon",
 };
 
-tacoCatInc.currentInventory(); // => 1710
-
-// let order = {
-//   gourmetShell: "hard treat shell",
-//   gourmetFishFilling: "salmon",
-// };
-
-// tacoCat.Inc.sale(order); // => 7
+tacoCatInc.sale(order); // => 7
 // tacoCat.Inc.sale(order); // => 7
 
 // tacoCat.gourmetFishFilling.tuna.quantity; // => 98
