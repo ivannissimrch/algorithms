@@ -42,9 +42,13 @@ let tacoCatInc = {
       let category = eachTacoInOrder;
       let taco = order[category];
       console.log(taco);
-      console.log(tacoCatInc[category][taco]["cost"]);
-    });
+      tacoCatInc[category][taco]["quantity"] =
+        tacoCatInc[category][taco]["quantity"] - 1;
 
+      const cost = tacoCatInc[category][taco]["cost"];
+      totalOrder += cost;
+    });
+    this.cash += totalOrder;
     return totalOrder;
   },
 };
@@ -56,10 +60,12 @@ let order = {
   gourmetFishFilling: "salmon",
 };
 
+console.log(tacoCatInc.sale(order)); // => 7
+console.log(tacoCatInc.cash);
 tacoCatInc.sale(order); // => 7
-// tacoCat.Inc.sale(order); // => 7
+console.log(tacoCatInc.cash);
 
-// tacoCat.gourmetFishFilling.tuna.quantity; // => 98
-// tacoCat.cash; // => 14
+console.log(tacoCatInc.gourmetFishFilling.tuna.quantity); // => 98
+//  tacoCat.cash; // => 14
 
-// tacoCatInc.currentInventory(); // => 1696
+console.log(tacoCatInc.currentInventory()); // => 1696
