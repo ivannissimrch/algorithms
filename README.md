@@ -1,0 +1,15 @@
+# Coding Problems and Algorithms
+
+This repository contains coding problems and algorithm solutions I've worked on to improve my problem-solving skills. The problems come from various sources such as LeetCode, exercism, scrimba and my coding tutor.
+
+My goals for this repo:
+
+- Practice and strengthen core programming concepts
+
+- Learn different problem-solving patterns and techniques
+
+- Track progress over time
+
+- Eventually build a dashboard to categorize and display problems by difficulty, topic, and source
+
+Feel free to explore the problems and solutions. Suggestions and contributions are welcome!
