@@ -1,6 +1,6 @@
 # Coding Problems and Algorithms
 
-This repository contains coding problems and algorithm solutions I've worked on to improve my problem-solving skills. The problems come from various sources such as LeetCode, exercism, scrimba and my coding tutor.
+This repository contains coding problems and algorithm solutions I've worked on to improve my problem-solving skills. The problems come from various sources.
 
 My goals for this repo:
 
