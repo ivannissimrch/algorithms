@@ -9,12 +9,11 @@ function printNumbers(number) {
 printNumbers(5);
 
 function sum(number) {
-  let total = number + total;
-  if (number === 1) {
-    return;
+  if (number === 0) {
+    return 0;
   }
 
-  sum(number - 1);
+  return number + sum(number - 1);
 }
 
-sum(5);
+console.log(sum(5));
