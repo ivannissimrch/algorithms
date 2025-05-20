@@ -2,7 +2,7 @@ function printNumbers(number) {
   if (number < 1) {
     return;
   }
-  console.log(number);
+  // console.log(number);
   printNumbers(number - 1);
 }
 
