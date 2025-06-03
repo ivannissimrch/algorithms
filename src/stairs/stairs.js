@@ -1,20 +1,17 @@
-function climbStairs(numberOfSteps) {
-  let numberOfWaysToClimb = undefined;
+function climbStairs(n) {
+  if (n <= 2) return n;
 
-  // if (numberOfSteps <= 3) {
-  //   numberOfWaysToClimb = numberOfSteps;
-  //   return numberOfWaysToClimb;
-  // } else {
-  let oneSteps = 1;
-  let towSteps = 1;
+  let towStepsBefore = 1; //1 way to reach step n-1
+  let oneStepBefore = 2; //2 way to reach step n-2
+  let currentWays = 0;
 
-  for (let stepNumber = 0; stepNumber <= numberOfSteps; stepNumber++) {
-    let tempVariable = oneSteps;
-    oneSteps = oneSteps + towSteps;
-    towSteps = tempVariable;
+  for (let stepNumber = 3; stepNumber <= n; stepNumber++) {
+    currentWays = oneStepBefore + towStepsBefore;
+    towStepsBefore = oneStepBefore;
+    oneStepBefore = currentWays;
   }
 
-  return oneSteps;
+  return oneStepBefore;
 }
 
 console.log(climbStairs(4));
