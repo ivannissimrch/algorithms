@@ -1,13 +1,24 @@
 function removeElement(nums, val) {
+  let k = 0;
   for (let i = 0; i < nums.length; i++) {
     if (nums[i] === val) {
-      nums[i] = null;
+      nums[i] = "_";
+    } else {
+      k++;
     }
   }
 
-  const k = nums.filter((num) => num !== null);
+  nums.sort((a, b) => {
+    if (a === "_") {
+      return -2;
+    } else {
+      return 2;
+    }
+  });
 
-  return k.length;
+  console.log(nums);
+
+  return k;
 }
 
 console.log(removeElement([3, 2, 2, 3], 3));
